@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> <head> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+<title>
+Stack.html
+</title>
+</head>
+<body>
+    <h2>builds a stack by Saivivek_Reddy_Kusukuntla</h2>
+		<div class="flex-container" id="target">
+		  <div class="stack">row item 1</div>   
+		  <div class="stack">row item 2</div>  
+		  <div class="stack">row item 3</div>  
+		</div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
+		<button onclick="makeNewDiv()">Push value</button>
+	
+	
+</body>
+<script>
+	function makeNewDiv(){
+		/* make the div and its text */
+		let element = document.createElement("div")
+		element.innerHTML = document.getElementById("3001").value
+		element.setAttribute("class","stack")
+		
+
+		/* add it to the container */
+		document.getElementById('target').appendChild(element)
+		
+	}
+</script>
+</html>	
