@@ -31,8 +31,21 @@ Stack.html
 </title>
 </head>
 <body style="background-color: rgb(232, 241, 250);">
+    <div class="container">
+        <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark and bg-secondary">
+            <a class="navbar-brand" href="stack.html" target="_self">stackItems</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="search.html" target="_self">search</a></li>
+                    <li class="nav-item active"> <a class="nav-link" href="reaction.html" target="_self">reaction</a></li>
+          </nav>
+        </div>
     <div class="container-fluid">
-    <h2>builds a stack by Saivivek_Reddy_Kusukuntla</h2>
+    <h2>Builds a stack by Saivivek_Reddy_Kusukuntla</h2>
 		<div class="flex-container" id="target">
 		  <div class="stack">row item 1</div>   
 		  <div class="stack">row item 2</div>  
@@ -45,6 +58,7 @@ Stack.html
 		<button onclick="makeNewDiv()">Push value</button>
         <button onclick="popitem()">Pop</button>
         <button onclick="zap()">Zap values</button>
+        <button onclick="unique()">Unique</button>
 	
 	</div>
 </body>
@@ -77,6 +91,17 @@ Stack.html
                         stackItems[i].remove()
                         console.log(itemToBeRemoved)
                         i--
+                    }
+                }
+            }
+        }
+        function unique(){
+            var stackItems = document.getElementsByClassName("stack")
+            for(var i=0; i<=stackItems.length; i++){
+                for(var j=i+1; j<stackItems.length; j++){
+                    if(stackItems[i].innerHTML == stackItems[j].innerHTML){
+                        stackItems[i].remove()
+                        i--;
                     }
                 }
             }
