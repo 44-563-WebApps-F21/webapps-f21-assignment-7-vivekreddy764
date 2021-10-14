@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .button {
+          line-height: 25px;
+          width: 50px;
+          font-size: 8pt;
+          font-family: tahoma;
+          font-size: x-large;
+          margin-top: 0px;
+          margin-right: 35px;
+          position:absolute;
+          top:0;
+          right:0;
+      }
+    </style>
   <title>reaction.html</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +24,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: rgb(228, 241, 253);">
+    <div class="container">
+        <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark and bg-secondary">
+            <a class="navbar-brand" href="reaction.html" target="_self">Hit React</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="search.html" target="_self">search</a></li>
+                    <li class="nav-item active"> <a class="nav-link" href="stack.html" target="_self">stack</a></li>
+          </nav>
+        </div>
     <div class="container">
         <div class="container-fluid">
             <div class="row">
@@ -36,18 +63,20 @@
         </div>
     </div>
   <script> 
-  var myTime = undefined;
-  var buttonTime = Date.now();
-  function recordReact() {
+  var myTime = undefined
+        var buttonTime = Date.now()
+
+        function recordReact() {
             myTime = Date.now();
             console.log("Time : " + myTime);
         }
-        var i;
+
         function startTime() {
-            for (let i = 0; i < 4; i++)
+            var ranNo = Math.floor(Math.random() * 10) + 2;
+            for (let i = 0; i < ranNo+1; i++)
                 setTimeout(() => {
                     document.getElementById('countdown').innerHTML = i
-                }, (3 - i) * 1000)
+                }, (ranNo - i) * 1000)
             setTimeout(() => {
                 if (myTime == undefined) {
                     document.getElementById('target').innerHTML = "Too Slow"
@@ -57,7 +86,6 @@
             }, 3000)
 
         }
-
   </script>
 
 </body>
