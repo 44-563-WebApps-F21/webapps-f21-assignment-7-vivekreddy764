@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <style>
+      .button {
+        line-height: 25px;
+        width: 50px;
+        font-size: 8pt;
+        font-family: tahoma;
+        font-size: x-large;
+        margin-top: 0px;
+        margin-right: 35px;
+        position:absolute;
+        top:0;
+        right:0;
+    }
+  </style>
         <title>
             Search.html
         </title>
@@ -13,12 +27,32 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body style="background-color: rgb(247, 210, 210);">
+      <div class="container">
+        <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark and bg-secondary">
+            <a class="navbar-brand" href="search.html" target="_self">Wild Hunt</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="reaction.html" target="_self">reaction</a></li>
+                    <li class="nav-item active"> <a class="nav-link" href="stack.html" target="_self">stack</a></li>
+          </nav>
+        </div>
       <div class="container">
         <h1><strong>Animal Hunt By Saivivek_Reddy_Kusukuntla</strong></h1>
         <p><mark>Click on the squares to search for <b>"wild life"</mark></b></p>
         <p class="text-center bg-info" id="tries">Number of tries is zero</p>
         <p class="text-center bg-secondary" id="distance">Distance is unknown</p>
+        
+          <div class="container">
+            <div class="button">
+              <button onclick="newGame()"><span class="spinner-grow spinner-grow-sm"></span>Try again!</button>
+          </div>
+        </div>
+        
         <div class="container">
             <div class="row container">
               <div class="col-sm-2"><img src="bush.jpg" alt="bush image" id="img0" class="img-fluid" onclick="check(0)"></div>
@@ -63,6 +97,7 @@
                   var triesCount = 0;
             var animalLocation = 13;
             var id;
+            var animalLocation = Math.floor(Math.random() * ids.length)
             
             function check(index) {
                 for (let i = 0; i < ids.length; i++) {
@@ -111,6 +146,15 @@
                 return row + column - 1;
 
             }
+            function newGame(){
+            triesCount = 0
+            animalLocation = Math.floor(Math.random()*23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for(var i=0; i<24; i++){
+
+                    document.getElementById(ids[i]).src = "bush.jpg"
+            }
+        }
 
       </script>
     </body>
